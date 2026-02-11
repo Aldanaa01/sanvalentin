@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Ti 💗</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:linear-gradient(135deg,#ffc0cb,#ff8fab);
+    overflow:hidden;
+    text-align:center;
+}
+
+/* Pantalla bienvenida */
+#welcome{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,#ff8fab,#ff4f81);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    z-index:10;
+}
+
+#welcome h1{
+    font-size:35px;
+}
+
+#welcome button{
+    margin-top:20px;
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:#ff4f81;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#welcome button:hover{
+    transform:scale(1.1);
+}
+
+/* Contenido principal */
+#main{
+    display:none;
+    padding:20px;
+    overflow-y:auto;
+    height:100vh;
+}
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin:20px 0;
+}
+
+.gallery img{
+    width:220px;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.message{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    max-width:800px;
+    margin:auto;
+}
+
+.buttons{
+    margin-top:25px;
+    position:relative;
+    height:120px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+#yes{
+    background:#ff4f81;
+    color:white;
+}
+
+#no{
+    background:#999;
+    color:white;
+    position:absolute;
+}
+
+.final{
+    display:none;
+    font-size:28px;
+    margin-top:20px;
+    color:#ff006e;
+}
+
+.heart{
+    position:fixed;
+    top:-10px;
+    font-size:20px;
+    animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Audio -->
+
+
+<!-- Pantalla bienvenida -->
+<div id="welcome">
+    <h1>Tengo algo muy especial para ti </h1>
+    <p>(Activa el sonido )</p>
+    <button onclick="startExperience()">Entrar </button>
+</div>
+
+<!-- Contenido principal -->
+<div id="main">
+
+<h1>𝓜𝓪𝓻𝓲𝓪 𝓙𝓸𝓼𝓮 𝓡𝓸𝓼𝓮𝓻𝓸 💗</h1>
+
+<div class="gallery">
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+    <img src="foto4.jpg">
+    <img src="foto5.jpg">
+    <img src="foto6.jpg">
+    <img src="foto7.jpg">
+    <img src="foto8.jpg">
+</div>
+
+<div style="margin:20px 0;">
+  <iframe 
+  width="100%" 
+  height="200"
+  src="https://www.youtube.com/embed/6uHkWJ6sSxA"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+</div>
+
+<div class="message">
+Me parece raro preguntar esto porque es mi primera vez preguntándoselo a alguien, pero lo bueno de la primera vez es que siempre va a ser única.
+
+Siento que, a la vez que escribo esto, pienso: “Qué raro preguntarte eso”, y sí, es raro, pero siento que también puede ser una forma diferente de hacer algo, algo que nos saca de nuestra rutina y una forma de demostrarte que te quiero.
+
+Volviendo al tema importante: ¿quieres ser mi San Valentín? No quiero simplemente preguntártelo y esperar tu respuesta, sino que quiero decirte por qué debes decir que sí. No siento que sea una pregunta fácil de responder, porque si una persona X te lo pregunta, tú vas a quedar como: “¿Qué debo responder?” o “¿Será grosero decirle que no?”. Y yo me pregunto: ¿será necesario pedirtelo? Y digo que sí, porque no debería preguntarlo. Siento que es algo que la mayoría tendría que preguntar, porque yo me di cuenta de que así como me pueden decir que sí, también pueden decir que no.
+
+Me gustaría que aceptaras, porque quiero que sea mi primera vez en un San Valentín en el que siento que quiero hacer algo totalmente diferente a lo que hayas visto, y porque es contigo. Porque quiero que tú vuelvas a conocer la parte de mí que no te defraudó y que sientas que de verdad, si las cosas se desean, se pueden hacer bien. Obviamente yo sé que en una noche no se va a arreglar todo, pero esta noche va a ser un gran primer paso de lo que quiero hacer y me gustaría hacerlo contigo. Aparte de eso, quiero que puedas llevarte algo de ese día que, por mi parte, me haría feliz, porque es algo que nos gusta a los dos y es algo que descubrimos con el tiempo. En este día quiero que te lleves una experiencia inolvidable, algo diferente y algo que yo sé que te va a gustar vivir más de una vez en tu vida.
+Pd: Ricitos
+<br><br>
+<b>Pd: Ricitos </b>
+</div>
+
+<h2>¿Quieres ser mi San Valentín? </h2>
+
+<div class="buttons">
+    <button id="yes" onclick="sayYes()">Sí 💗</button>
+    <button id="no" onmouseover="moveNo()" onclick="sayYes()">No 😢</button>
+</div>
+
+<div class="final" id="final">
+ Sabía que dirías que sí , Te amo<br>
+Prepárate para un día inolvidable.
+</div>
+
+</div>
+
+
+
+<script>
+function startExperience(){
+    document.getElementById("welcome").style.display="none";
+    document.getElementById("main").style.display="block";
+
+    // Intenta activar reproducción (requiere interacción del usuario)
+    const iframe = document.getElementById("ytplayer");
+    iframe.src += "&autoplay=1";
+}
+
+
+function moveNo(){
+    const btn = document.getElementById("no");
+    btn.style.top = Math.random()*80 + "px";
+    btn.style.left = Math.random()*80 + "%";
+}
+
+function sayYes(){
+    document.getElementById("final").style.display="block";
+    document.getElementById("no").style.display="none";
+    startHearts();
+}
+
+function startHearts(){
+    for(let i=0;i<40;i++){
+        let heart = document.createElement("div");
+        heart.innerHTML="💗";
+        heart.classList.add("heart");
+        heart.style.left=Math.random()*100+"%";
+        heart.style.animationDuration=(Math.random()*3+2)+"s";
+        document.body.appendChild(heart);
+    }
+}
+
+</script>
+
+</body>
+</html>
